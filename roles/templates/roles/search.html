@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Busca
+{% endblock title %}
+
+{% block content %}
+<h2>Busca de Rolês por Nome</h2>
+<form action="{% url 'roles:search' %}">
+    <p>
+        <label for="id_query">Nome:</label>
+        <input type="text" name="query" id="id_query" />
+    </p>
+    <button type="submit">Buscar</button>
+</form>
+
+
+<h2>Resultado da Busca</h2>
+{% if role_list %}
+<section class="lista-de-cards">
+    {% for role in role_list %}
+    <article class="card">
+        <img src="{{ role.poster_url }}" alt="Poster do filme {{ role.name}}">
+        <p>{{ role.name }}: {{ role.date }} - {{ role.address }}</p>
+    </article>
+    {% endfor %}
+</section>
+{% else %}
+<p>Não foi encontrado nenhum rolê para a busca.</p>
+{% endif %}
+
+{% endblock content %}

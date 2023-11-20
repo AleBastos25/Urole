@@ -1,0 +1,32 @@
+{% extends 'base.html' %} 
+
+{% block title %}
+    Lista
+{% endblock title %}
+
+{% block content %}
+    <h2>Todos os Rolês</h2>
+    <section>
+        <p>
+          Muitos resultados? <a href="{% url 'roles:search' %}">Buscar</a>
+        </p>
+        <p>
+          Não encontrou o rolê?
+          <a href="{% url 'roles:create' %}">Adicionar Novo Rolê</a>
+        </p>
+    </section>
+    {% if role_list %}
+    <section class="lista-de-cards">
+    {% for role in role_list %}
+    <article class="card">
+        <a href="{% url 'roles:detail' forloop.counter %}"
+        ><img src="{{ role.poster_url }}" alt="Poster do filme {{ role.name}}"
+        /></a>
+        <p>{{ role.name }}: {{ role.date }} - {{ role.address }}</p>
+    </article>
+    {% endfor %}
+    </section>
+    {% else %}
+    <p>Não foi encontrado nenhum rolê.</p>
+    {% endif %} 
+{% endblock content %}

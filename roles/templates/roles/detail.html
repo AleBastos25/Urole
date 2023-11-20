@@ -1,0 +1,18 @@
+{% extends 'base.html' %} 
+{% block title %} 
+    {{ role.name }} ({{role.date }}) 
+{% endblock title %} 
+
+{% block content %}
+    <h2>Detalhes do Rolê </h2>
+    
+    <section class="dados-de-role">
+      <img src="{{ role.poster_url }}" alt="Poster do role {{ role.name}}" width="300" />
+      <ul>
+        <li>Nome:  {{ role.name }}</li>
+        <li>Data:  {{ role.date }}</li>
+        <li>Local: {{ role.address }}</li>
+      </ul>
+    </section>
+    
+{% endblock content %}

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>
-        URolê | {% block title %}{% endblock %}         
+        URolê  •  {% block title %}{% endblock %}         
     </title>
     <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
@@ -19,6 +19,7 @@
         <a href="{% url 'index' %}"> <img src="{% static 'logo.svg' %}"> </a>
         <nav id="navegacao-principal">
             <ul>
+                <li><a href="{% url 'roles:index' %}">Rolês</a></li>
                 <li><a href="{% url 'about' %}">Sobre</a></li>
             </ul>
         </nav>

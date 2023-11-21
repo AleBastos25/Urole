@@ -11,4 +11,6 @@ urlpatterns = [
     path('update/<int:role_id>/', views.update_role, name='update'),
     path('delete/<int:role_id>/', views.delete_role, name='delete'),
     path('<int:role_id>/comment/', views.create_comment, name='comment'),
+    path('lists/', views.ListListView.as_view(), name='lists'),
+    path('lists/create', views.ListCreateView.as_view(), name='create-list'),
 ]

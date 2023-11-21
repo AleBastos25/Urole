@@ -1,8 +1,23 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.urls import reverse
-from .models import Role, Comment
+from django.urls import reverse, reverse_lazy
+from django.views import generic
+from .models import Role, Comment, List
 from .forms import CommentForm
+
+
+class ListListView(generic.ListView):
+    model = List
+    template_name = 'roles/lists.html'
+
+
+class ListCreateView(generic.CreateView):
+    model = List
+    template_name = 'roles/create_list.html'
+    fields = ['name', 'author', 'roles']
+    success_url = reverse_lazy('roles:lists')
+
+
 
 def create_comment(request, role_id):
     role = get_object_or_404(Role, pk=role_id)

@@ -18,9 +18,9 @@ class Migration(migrations.Migration):
             name='Role',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=255)),
-                ('dia', models.CharField(max_length=255)),
-                ('address', models.CharField(max_length=255)),
+                ('name', models.CharField(max_length=300)),
+                ('dia', models.CharField(max_length=300)),
+                ('address', models.CharField(max_length=300)),
                 ('poster_url', models.URLField(null=True)),
             ],
         ),
@@ -28,8 +28,8 @@ class Migration(migrations.Migration):
             name='Comment',
             fields=[
                 ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('text', models.CharField(max_length=255)),
-                ('dia', models.CharField(max_length=255)),
+                ('text', models.CharField(max_length=300)),
+                ('dia', models.CharField(max_length=300)),
                 ('author', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL)),
                 ('role', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='roles.role')),
             ],

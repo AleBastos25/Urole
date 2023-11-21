@@ -19,10 +19,10 @@
     <section class="lista-de-cards">
     {% for role in role_list %}
     <article class="card">
-        <a href="{% url 'roles:detail' forloop.counter %}"
-        ><img src="{{ role.poster_url }}" alt="Poster do filme {{ role.name}}"
-        /></a>
-        <p>{{ role.name }}: {{ role.date }} - {{ role.address }}</p>
+      <a href="{% url 'roles:detail' role.id %}"> <!-- modifique esta linha -->
+          <img src="{{ role.poster_url }}" alt="Poster do filme {{ role.name }}" />
+      </a>
+      <p>{{ role.name }}: {{ role.dia }} - {{ role.address }}</p>
     </article>
     {% endfor %}
     </section>

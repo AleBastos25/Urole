@@ -1,6 +1,6 @@
 {% extends 'base.html' %} 
 {% block title %} 
-    {{ role.name }} ({{role.date }}) 
+    {{ role.name }} ({{role.dia }}) 
 {% endblock title %} 
 
 {% block content %}
@@ -10,8 +10,10 @@
       <img src="{{ role.poster_url }}" alt="Poster do role {{ role.name}}" width="300" />
       <ul>
         <li>Nome:  {{ role.name }}</li>
-        <li>Data:  {{ role.date }}</li>
+        <li>Data:  {{ role.dia }}</li>
         <li>Local: {{ role.address }}</li>
+        <li><a href="{% url 'roles:update' role.id %}">Editar</a></li>
+        <li><a href="{% url 'roles:delete' role.id %}">Apagar</a></li>
       </ul>
     </section>
     

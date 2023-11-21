@@ -2,8 +2,8 @@
 <svg
    version="1.0"
    width="200pt"
-   height="90.935776pt"
-   viewBox="0 0 200 90.935776"
+   height="76.07pt"
+   viewBox="0 0 200 76.07"
    preserveAspectRatio="xMidYMid"
    id="svg4"
    sodipodi:docname="logo.svg"
@@ -91,6 +91,17 @@
        x2="372.71771"
        y2="144.77611"
        gradientTransform="matrix(1.8929998,0,0,1.8929998,4.4575553,7.4999983)" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath6">
+      <rect
+         style="fill:#000000;stroke-width:1.15937;stroke-miterlimit:13.1;paint-order:markers fill stroke"
+         id="rect7"
+         width="13.941773"
+         height="75.810112"
+         x="159.32169"
+         y="166.18582" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="namedview4"
@@ -102,9 +113,9 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt"
-     inkscape:zoom="2.2103275"
-     inkscape:cx="147.48946"
-     inkscape:cy="273.7151"
+     inkscape:zoom="3.6011588"
+     inkscape:cx="141.34339"
+     inkscape:cy="29.434969"
      inkscape:window-width="1850"
      inkscape:window-height="1016"
      inkscape:window-x="70"

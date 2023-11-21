@@ -10,4 +10,5 @@ urlpatterns = [
     path('<int:role_id>/', views.detail_role, name='detail'),
     path('update/<int:role_id>/', views.update_role, name='update'),
     path('delete/<int:role_id>/', views.delete_role, name='delete'),
+    path('<int:role_id>/comment/', views.create_comment, name='comment'),
 ]

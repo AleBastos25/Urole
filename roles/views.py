@@ -1,7 +1,26 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
-from .models import Role
+from .models import Role, Comment
+from .forms import CommentForm
+
+def create_comment(request, role_id):
+    role = get_object_or_404(Role, pk=role_id)
+    if request.method == 'POST':
+        form = CommentForm(request.POST)
+        if form.is_valid():
+            comment_author = form.cleaned_data['author']
+            comment_text = form.cleaned_data['text']
+            comment = Comment(author=comment_author,
+                            text=comment_text,
+                            role=role)
+            comment.save()
+            return HttpResponseRedirect(
+                reverse('roles:detail', args=(role_id, )))
+    else:
+        form = CommentForm()
+    context = {'form': form, 'role': role}
+    return render(request, 'roles/comment.html', context)
 
 def update_role(request, role_id):
     role = get_object_or_404(Role, pk=role_id)
@@ -61,5 +80,5 @@ def list_roles(request):
 
 def detail_role(request, role_id):
     role = get_object_or_404(Role, pk=role_id)
-    context = {'movie': role}
-    return render(request, 'movies/detail.html', context)
+    context = {'role': role}
+    return render(request, 'roles/detail.html', context)

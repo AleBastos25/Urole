@@ -17,4 +17,31 @@
       </ul>
     </section>
     
+
+<hr>
+
+<section>
+    <header>
+        <h3>Comentário</h3>
+    </header>
+    <ul>
+        {% if role.comment_set.all %}
+            {% for comment in role.comment_set.all %}
+                <figure>
+                    <blockquote>
+                        "{{ comment.text }}"
+                    </blockquote>
+                    <figcaption>—{{ comment.author }} ({{ comment.dia }})</figcaption>
+                </figure>
+            {% endfor %}
+        {% else %}
+            <p>Ainda não existe nenhum comentário para este filme.</p>
+        {% endif %}
+      </ul>
+    
+      <hr>
+  
+      <a href="{% url 'roles:comment' role.pk %}"><button>Deixe seu comentário</button></a>
+</section>
+
 {% endblock content %}
